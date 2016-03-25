@@ -1,0 +1,76 @@
+﻿#MiPopMod {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-PopUpMod {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:400px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarPopUpMod {
+    position: absolute;
+    right: 15px;
+}
+
+
+
+#MiPopDele {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-PopUpDele {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:400px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarPopUpDele {
+    position: absolute;
+    right: 15px;
+}
+
+#MiPopVerUsu {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-PopUpVerUsu {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:400px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarPopUpVerUsu {
+    position: absolute;
+    right: 15px;
+}

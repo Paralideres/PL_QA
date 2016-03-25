@@ -1,0 +1,144 @@
+﻿body {
+    color: #333333;
+}
+#lista1 {
+    width:200px;
+    border:1px solid #990000;
+    height:auto;
+    float:left;
+    margin-right:5px;
+}
+#lista2 {
+    width:200px;
+    border:1px solid #01DF01;
+    height:auto;
+    float:left;
+    margin-right:5px;
+}
+
+#MiCrearEquipo {  
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-CrearEquipo {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:400px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarCrearEquipo {
+    position: absolute;
+    right: 15px;
+}
+
+
+
+#MiMostrarEquipo{
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-MostrarEquipo {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:400px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarMostrarEquipo {
+    position: absolute;
+    right: 15px;
+}
+
+#MiPopDele {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-PopUpDele {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:400px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarPopUpDele {
+    position: absolute;
+    right: 15px;
+}
+
+#MiPopEliminarUS {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-PopUpEliminarUS {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:400px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.MiCerrarEliminarUS {
+    position: absolute;
+    right: 15px;
+}
+
+#MiPopUpPendientes {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-PopUpPendientes {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:450px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarPopUpPendientes {
+    position: absolute;
+    right: 15px;
+}
