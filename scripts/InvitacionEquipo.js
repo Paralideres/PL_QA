@@ -242,7 +242,7 @@ function esAdministrador() {
 
 function ObtieneLibreta(id) {
     var resultado = {
-        url: "http://localhost/PLWeb4_7/WsParaLideres.asmx/Lista_Libreta_Usuarios?Id_Usuario_Admin=" + id,
+        url: "http://localhost/PLWeb5_0/WsParaLideres.asmx/Lista_Libreta_Usuarios?Id_Usuario_Admin=" + id,
 
         getValue: function(element) {
             return element.NOMBRE + '; ' + element.ID;
