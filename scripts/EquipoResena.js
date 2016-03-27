@@ -69,16 +69,21 @@ $(document).ready(function() {
         //alert(Equipo_Id + '-' + Equipo_Recurso_Id + '-' + Texto + '-' + Tipo);
         if (Equipo_Id > 0) {
             var resultado = GuardarComentario(Equipo_Id, Equipo_Recurso_Id, Texto, Tipo);
-            alert(resultado);
+            //alert(resultado);
             if (resultado > 1 && Equipo_Recurso_Id == 0) {
                 alert("Su Reseña se acaba de Guardar");
                 $('#Resena').attr('value', '');
                 $('#MiPopUp').fadeOut('slow');
+                VerComentarios(Idp, Equipo_Id);
+                $('#MiPopUp').show();
+                
             }
             else if (resultado > 1 && Equipo_Recurso_Id > 0) {
                 alert("Su Comentario se acaba de Guardar");
                 $('#Resena').attr('value', '');
                 $('#MiPopUp').fadeOut('slow');
+                VerComentarios(Idp, Equipo_Id);
+                $('#MiPopUp').show();
             }
         }
         else {
@@ -184,7 +189,7 @@ function TraeCantidadComentarios() {
     var resultado;
     var Tipo = 'R';
     var dataToSend = "{'IdPagina': " + Idp + "}";
-    alert(dataToSend);
+    //alert(dataToSend);
     $.ajax({
         type: "POST",
         contentType: "application/json;charset=utf-8",

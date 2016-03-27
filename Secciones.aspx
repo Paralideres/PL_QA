@@ -37,19 +37,19 @@
     	<a class="actual" id="hrefTitulo5" runat="server" visible="false">Registro</a>
 </div>
 <div id="central_content">
-  <div id="cnt_header" class="sections_header">
-    <h1 id="LblSeccionTitulo" runat="server"></h1>
-    <p id="LblDescripcionSeccion" runat="server"></p>
-  </div>
-    <div id="cnt_content">              
-     <asp:Table ID="tblResultadoArticulosSubSeccion" runat="server" CssClass="SubseccionesTbl" HorizontalAlign="Center"
-     TabIndex="7">
-     </asp:Table>
-     <asp:Table ID="tblResultadoArticulos" runat="server" CssClass="ArticlesTbl" HorizontalAlign="Center"
-     TabIndex="7">
-     </asp:Table>
-     <label id="TagPaginacion" Runat="Server"></label>
-  </div>
+        <div id="cnt_header" class="sections_header">
+            <h1 id="LblSeccionTitulo" runat="server"></h1>
+            <p id="LblDescripcionSeccion" runat="server"></p>
+        </div>
+        <div id="cnt_content">              
+             <asp:Table ID="tblResultadoArticulosSubSeccion" runat="server" CssClass="SubseccionesTbl" HorizontalAlign="Center"
+             TabIndex="7">
+             </asp:Table>
+             <asp:Table ID="tblResultadoArticulos" runat="server" CssClass="ArticlesTbl" HorizontalAlign="Center"
+             TabIndex="7">
+             </asp:Table>
+             <label id="TagPaginacion" Runat="Server"></label>
+        </div>
   </div>
 <!-- Starts Sidebar -->	
         <div id="sidebar_box">

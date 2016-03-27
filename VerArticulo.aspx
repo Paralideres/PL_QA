@@ -148,9 +148,6 @@
                                           <img src="images/Mensaje.png" id="imagenIdentificar" />  
                                         </a>
                                     </div>
-                               
-                                    
-                                   
                                 </div>
                               </div>
 
@@ -256,46 +253,47 @@
 <input id="hidVu" name="hidVu" type="hidden" visible="false" value="" />
 <input id="hidVe" name="hidVe" type="hidden" visible="false" value="" />
 
- <div id="MiPopUp" style="display:none">
-        <div class="Contenido-PopUp">
-            <div class="CerrarPopUp">
-                <a href="#" id="MiCerrar">
-                    <img src="images/close.png"/>
-                </a>
-            </div>
-            <div id="MuestraResena" >
-	            <div id="ResenaInicial">
-                    <table id="tbResultadoResenaComentarios" class="grid" width="100%" >
-                    <tbody>
-                    </tbody>
-                    </table>    
+    <div id="MiPopUp" style="display:none">
+            <div class="Contenido-PopUp">
+                <div class="CerrarPopUp">
+                    <a href="#" id="MiCerrar">
+                        <img src="images/close.png"/>
+                    </a>
                 </div>
-                <label id="LblComentario">Escriba un Comentario</label> <br />
-                <textarea id="Resena" name="comment" style="width:350px; height:70px"  ></textarea> <br />
-                <div style="width:350px">
-                    <center>
-                    <input type="button" id="btnCompartirInicial" value="Compartir"  />
-                    </center>
+                <div id="MuestraResena" >
+
+                    <label id="LblComentario">Escriba un Comentario</label> <br />
+                    <textarea id="Resena" name="comment" style="width:350px; height:70px"  ></textarea> <br />
+                    <div style="width:350px">
+                        <center>
+                        <input type="button" id="btnCompartirInicial" value="Compartir"  />
+                        </center>
+                    </div>
+                    <div id="ResenaInicial">
+                        <table id="tbResultadoResenaComentarios" class="grid" width="100%" >
+                        <tbody>
+                        </tbody>
+                        </table>    
+                    </div>
                 </div>
             </div>
-        </div>
- </div>	
-    
+     </div>	
+        
     <div id="divEquipos" style="display:none">
-        <div class="Contenido-PopUpEquipo">
-            <div class="CerrarPopUpEquipo">
-                <a href="#" id="MiCerrarEquipo">
-                    <img src="images/close.png"/>
-                </a>
+            <div class="Contenido-PopUpEquipo">
+                <div class="CerrarPopUpEquipo">
+                    <a href="#" id="MiCerrarEquipo">
+                        <img src="images/close.png"/>
+                    </a>
+                </div>
+                    <label>Seleccione Equipo:</label> 
+                    <select id="cboEquipos">
+                      <option value="">Seleccione uno...</option>
+                     </select>
+                     
             </div>
-                <label>Seleccione Equipo:</label> <br />
-                <select id="cboEquipos">
-                  <option value="">Seleccione uno...</option>
-                 </select>
-                 <input type="button" id="btnVer" value="Ver Comentarios"  />
         </div>
-    </div>
-    
+        
 
 
 
@@ -303,8 +301,8 @@
  <input type="hidden" id="num_eq" name="num_eq_hid" value="" />
  <input type="hidden" id="num_eq_rec" name="num_eq_rec_hid" value="" />
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
 
 </asp:Content>
 <asp:Content ID="VerArticulo_Final" ContentPlaceHolderID="ContenidoFinal" Runat="Server">

@@ -1,7 +1,24 @@
 ﻿$(document).ready(function() {
     VerTimeLineEquipo();
 
-    $('img').click(function() {
+//    $('img').click(function() {
+//        var id = this.id;
+//        var n = id.indexOf("&");
+//        var num_p = id.substring(0, n);
+//        var num_eq = id.substring(n + 1);
+//        $('#num_pag').attr('value', num_p);
+//        $('#num_eq').attr('value', num_eq);
+//        var numero_pagina = $("#num_pag").val();
+//        var numero_equipo = $("#num_eq").val();
+//        //alert('numero_pagina ' + numero_pagina);
+//        $('#MiPopUpCom').fadeIn('slow');
+//        MostrarResenaCreada(numero_pagina, numero_equipo);
+//        $('#MuestraComentarios').hide();
+//        $('#MuestraComentarios').show();
+//        $('#Comentario').focus();
+//    });
+
+    $("img").live('click', function() {
         var id = this.id;
         var n = id.indexOf("&");
         var num_p = id.substring(0, n);
@@ -20,7 +37,8 @@
 
 
     $('#MiCerrarCom').click(function() {
-        $('#MiPopUpCom').fadeOut('slow');
+    $('#MiPopUpCom').fadeOut('slow');
+    VerTimeLineEquipo();
         return false;
     });
 
@@ -42,15 +60,22 @@
             var Equipo_Recurso_Id = $('#num_eq_rec').val();
             GrabarComentario(numero_pagina, numero_equipo, Equipo_Recurso_Id);
             resultado = TraeCantidadComentarios(numero_pagina, numero_equipo);
+            //alert(resultado);
             if (resultado > 0) {
-                if (resultado == 1) {
-                    $(nombreComentario).html(resultado);
-                }
-                else if (resultado > 1) {
-                    $(nombreComentario).html(resultado);
-                }
-                $('#MiPopUpCom').fadeIn('slow');
+//                if (resultado == 1) {
+//                    alert('1');
+//                    $(nombreComentario).html(resultado);
+//                    
+//                }
+//                else if (resultado > 1) {
+//                    alert('>1'); 
+//                    $(nombreComentario).html(resultado);
+//                    
+//                }
+                //$('#MiPopUpCom').fadeIn('slow');
+                $('#MiPopUpCom').hide();
                 MostrarResenaCreada(numero_pagina, numero_equipo);
+                $('#MiPopUpCom').fadeIn('slow');
                 $('#Comentario').val('');
                 $('#Comentario').focus();
             }
@@ -63,6 +88,33 @@
 
 
 });
+
+
+function Existe_Recurso(EquipoId, PageId) {
+    var resultado = '0|0';
+    var dataToSend = "{'ID_Equipo': " + EquipoId + ", 'ID_PAGINA': " + PageId + "}";
+
+    $.ajax({
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        url: "VerArticulo.aspx/Existe_Recurso_En_Equipo",
+        async: false,
+        data: dataToSend,
+        success: function(result) {
+            if (result.d[0] != null) {
+                $.each(result.d, function(index) {
+                    var vExisteRecursoCompartido = this.EXISTE_RECURSO_COMPARTIDO;
+                    var vIdEquipoRecurso = this.ID_EQUIPO_RECURSO;
+                    var vdatos = vExisteRecursoCompartido + "|" + vIdEquipoRecurso;
+                    //alert(vdatos);
+                    resultado = vdatos;
+                });
+            }
+        }
+    });
+    //alert(resultado);
+    return resultado;
+}
 
 function VerTimeLineEquipo() {
     var resultado;

@@ -11,7 +11,16 @@
 
     <script src="scripts/Equipos.js" type="text/javascript"></script>
    
-    <div id="AdmEquipos"  style="width:410px">
+  
+
+
+
+</asp:Content>
+<asp:Content ID="Contenido_Central_Equipo_Crear" ContentPlaceHolderID="ContenidoCentral" Runat="Server">
+ <div id="central_content">
+     <div id="cnt_content">
+ 
+   <div id="AdmEquipos"  style="width:410px">
             <table id="ListadoEquipos" class="grid" width="100%" >
                 <thead>
                     <tr>
@@ -48,12 +57,10 @@
              <input type="hidden" id="num_eq" name="num_eq_hid" value="" />
              </div>
    
-   
    <br />
    <br />
    <br />
    <br />
-   
    
     <div id="MiCrearEquipo" style="display:none">
         <div class="Contenido-CrearEquipo">
@@ -154,8 +161,6 @@
        </div>
     </div>
 
-
-
  <div id="MiPopDele" style="display:none" >
         <div class="Contenido-PopUpDele">
             <div class="CerrarPopUpDele">
@@ -246,11 +251,13 @@
             </div>
         </div>
     </div>
-
-
-
-</asp:Content>
-<asp:Content ID="Contenido_Central_Equipo_Crear" ContentPlaceHolderID="ContenidoCentral" Runat="Server">
+    
+    
+     </div>
+     
+ </div>
+ 
+ 
  
 </asp:Content>
 <asp:Content ID="Contenido_Final_Equipo_Crear" ContentPlaceHolderID="ContenidoFinal" Runat="Server">

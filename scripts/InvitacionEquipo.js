@@ -241,6 +241,8 @@ function esAdministrador() {
 //getValue: "NOMBRE",
 
 function ObtieneLibreta(id) {
+
+    //url: "http://qa.paralideres.org/WsParaLideres.asmx/Lista_Libreta_Usuarios?Id_Usuario_Admin=" + id,
     var resultado = {
         url: "http://localhost/PLWeb5_0/WsParaLideres.asmx/Lista_Libreta_Usuarios?Id_Usuario_Admin=" + id,
 

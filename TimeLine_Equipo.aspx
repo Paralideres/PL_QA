@@ -9,11 +9,17 @@
 </asp:Content>
 
 <asp:Content ID="Contenido_Inicial_Equipo_TimeLine" ContentPlaceHolderID ="ContenidoInicial" runat="server">
-
 <script src="scripts/TimeLine.js" type="text/javascript"></script>
+</asp:Content>
+
+<asp:Content ID="Contenido_Central_Equipo_TimeLine" ContentPlaceHolderID="ContenidoCentral" Runat="Server">
+ 
+<div id="central_content">
 <input type="hidden" id="num_pag" name="num_pag_hid" value="" />
 
 <input type="hidden" id="num_eq" name="num_eq_hid" value="" />
+
+<div id="cnt_content">
 
 
         <div id="DivVerTimeLine" >
@@ -73,12 +79,9 @@
 
         </div>
       </div>
-
+</div>
  <input type="hidden" id="num_eq_rec" name="num_eq_rec_hid" value="" />
-</asp:Content>
-
-<asp:Content ID="Contenido_Central_Equipo_TimeLine" ContentPlaceHolderID="ContenidoCentral" Runat="Server">
- 
+ </div>
 </asp:Content>
 <asp:Content ID="Contenido_Final_Equipo_TimeLine" ContentPlaceHolderID="ContenidoFinal" Runat="Server">
 
