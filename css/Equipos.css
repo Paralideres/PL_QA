@@ -142,3 +142,28 @@
     position: absolute;
     right: 15px;
 }
+
+#MiPopUpConversaciones {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.Contenido-PopUpConversaciones {
+    margin:0px auto;
+    margin-top:310px;
+    margin-left:355px;
+    position:relative;
+    padding:10px;
+    width:850px;
+    min-height:100px;
+    background-color:#F1F1F1;
+    /*background-color:#c0c0c0;*/
+    
+}
+.CerrarPopUpConversaciones {
+    position: absolute;
+    right: 15px;
+}

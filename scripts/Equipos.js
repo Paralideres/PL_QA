@@ -250,11 +250,33 @@
     });
 
     $('#btnConversaciones').click(function() {
-    //aqui listar todas las conversaciones
-       // y dentro de ellas ir seleccionando las que quieran cerrar
- 
+        VerListadoConversaciones();
+        $('#MiPopUpConversaciones').fadeIn('slow');
+
+        //aqui listar todas las conversaciones
+        // y dentro de ellas ir seleccionando las que quieran cerrar
+
     });
-    
+
+    $('#btnArchivar').click(function() {
+        var EquipoRecurso_Id = $('input[type=radio][name=EquipoRecurso]:checked').attr('id');
+        var resultado = ArchivaConversacion(EquipoRecurso_Id);
+        if (resultado == "OK") {
+            alert("Se Archivo con Exito la conversación");
+        }
+        else {
+            alert(resultado);
+        }
+        $('#MiPopUpConversaciones').hide();
+        VerListadoConversaciones();
+        $('#MiPopUpConversaciones').show();
+        
+    });
+
+    $('#MiCerrarConversaciones').click(function() {
+        $('#MiPopUpConversaciones').fadeOut('slow');
+        return false;
+    });
 
 
 });
@@ -607,7 +629,7 @@ function VerListadoPendiente() {
                     //row += "<td>"
                     //row += " <input type='button' class='link_btn_rounded' id='btnAceptarInv' value='Aceptar'  />";
                     //row += " <input type='button' class='link_btn_rounded' id='btnRechazarInv' value='Rechazar'  />";
-                             //<input type="button" class="link_btn_rounded" id="btnEliminarUsuario"  value="Grabar"  />
+                    //<input type="button" class="link_btn_rounded" id="btnEliminarUsuario"  value="Grabar"  />
                     //row += "<button type='button' id=" + this.ID_INVITACION_A_EQUIPO + ">Aceptar</button>"
                     //row += "<button type='button' id=" + this.ID_INVITACION_A_EQUIPO + ">Rechazar</button>"
                     //row += "</td>";
@@ -646,92 +668,86 @@ function ActualizaInvitacion(InvEquipo_id, Tipo) {
 }
 
 
+function VerListadoConversaciones() {
+    var resultado;
+    //var dataToSend = "{'Id_Equipo': " + Equipo_Id + "}";
 
-//function MostrarEquipos() {
-//    $.ajax({
-//        type: "POST",
-//        contentType: "application/json;charset=utf-8",
-//        url: "Crear_Equipo.aspx/ListarEquipos",
-//        async: false,
-//        //data: dataToSend,
-//        success: function(result) {
-//            //alert(result);
-//            $('#lista1 li').remove();
-//            $('#lista2 li').remove();
-//            $('#lista1 h3').remove();
-//            $('#lista2 h3').remove();
-//            if (result.d[0] != null) {
-//                var grid = "";
-//                var row = "";
-//                var contaLista1 = 0;
-//                var contaLista2 = 0;
-//                $.each(result.d, function(index) {
-//                    row = "";
-//                    if (this.TIPO == 1) {
-//                        grid = $('#lista1');
-//                        if (contaLista1 == 0) {
-//                            row = "<h3>Administras a:</h3> <br/>";
-//                            contaLista1 = 1;
-//                        }
-//                    }
-//                    else {
-//                        grid = $('#lista2');
-//                        if (contaLista2 == 0) {
-//                            row = "<h3>Participas en:</h3> <br/>";
-//                            contaLista2 = 1;
-//                        }
-//                    }
+    $.ajax({
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        url: "Equipos.aspx/ListarConversaciones",
+        async: false,
+        //data: dataToSend,
+        success: function(result) {
+            $('#tbConversaciones td').remove();
+            if (result.d[0] != null) {
+                var grid = $('#tbConversaciones');
+                $.each(result.d, function(index) {
+                    var row = "<tr class=\"";
+                    if (index % 2 == 0)
+                        row += "gridRow";
+                    else
+                        row += "gridAltRow";
 
+                    row += "\">";
 
-//                    row += "<li>"
-//                    row += "<span  <font style='font-size:small; font-weight:bold'>" + this.NOMBRE_EQUIPO + "</font></span>";
-//                    row += "</li>";
-//                    //row += "</tr>"
-//                    //alert(row);
-//                    //$('#lista1').append(row);
-//                    grid.append(row);
-//                    //grid.find('> tbody').append(row);
-//                });
-//                //grid.show();
-//            }
-//            else {
-//                $('#lista1').css('display', 'none');
-//                $('#lista2').css('display', 'none');
-//            }
-//        }
-//    });
-//}
+                    row += "<td>"
+                    row += "<input type='radio' name='EquipoRecurso' id=" + this.ID_EQUIPO_RECURSO + " value=" + this.ID_EQUIPO + " />";
+                    row += " <span>" + this.RESENA_COMENTARIO + "</span>";
+                    row += "</td>";
+                    row += "<td>"
+                    row += " <span>" + this.NOMBRE_RECURSO + "</span>";
+                    row += "</td>";
+                    row += "<td>"
+                    row += " <span>" + this.NOMBRE_EQUIPO + "</span>";
+                    row += "</td>";
+                    if (this.COMENTARIO_INI_POR == 1) {
+                        row += "<td>"
+                        row += " <span> Mi </span>";
+                        row += "</td>";
+
+                    }
+                    else {
+                        row += "<td>"
+                        row += " <span>" + this.NOMBRE_INICIA_POR + "</span>";
+                        row += "</td>";
+
+                    }
+                    row += "<td>"
+                    row += " <span>" + this.FECHA_APORTE + "</span>";
+                    row += "</td>";
+                    row += "<td>"
+                    row += " <span>" + this.CANTIDAD_COMENTARIO + "</span>";
+                    row += "</td>";
 
 
-//function MostrarEquiposLuegodeGrabar() {
-//    $.ajax({
-//        type: "POST",
-//        contentType: "application/json;charset=utf-8",
-//        url: "Crear_Equipo.aspx/ListarEquipos",
-//        async: false,
-//        //data: dataToSend,
-//        success: function(result) {
-//            //alert(result);
-//            $('#lista1 li').remove();
-//            $('#lista2 li').remove();
-//            if (result.d[0] != null) {
-//                var grid = "";
-//                var row = "";
-//                var contaLista1 = 0;
-//                var contaLista2 = 0;
-//                $.each(result.d, function(index) {
-//                    row += "<li>"
-//                    row += "<span  <font style='font-size:small; font-weight:bold'>" + this.NOMBRE_EQUIPO + "</font></span>";
-//                    row += "</li>";
-//                    grid.append(row);
+                    row += "</tr>"
+                    grid.find('> tbody').append(row);
+                });
+                grid.show();
+            }
+            else {
+                $('#tbConversaciones').css('display', 'none');
+            }
+        }
+    });
+    return resultado;
+}
 
-//                });
-//                //grid.show();
-//            }
-//            else {
-//                $('#lista1').css('display', 'none');
-//                $('#lista2').css('display', 'none');
-//            }
-//        }
-//    });
-//}
+function ArchivaConversacion(EquipoRecurso_Id) {
+    var resultado;
+    var dataToSend = "{'Id_Equipo_Recurso': " + EquipoRecurso_Id + "}";
+    //alert(dataToSend);
+    $.ajax({
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        url: "Equipos.aspx/ArchivarConversacion",
+        async: false,
+        data: dataToSend,
+        success: function(result) {
+            resultado = result.d;
+            //alert(resultado);
+        }
+    });
+    return resultado;
+}

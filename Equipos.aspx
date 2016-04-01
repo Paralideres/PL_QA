@@ -52,7 +52,7 @@
              <input type="button" id="btnCrearEq" class="link_btn_rounded"  value="Crear Equipo" />
              <input type="button" id="btnIrEquipo" class="link_btn_rounded"  value="Ir a Equipo" />
              <input type="button" id="btnInvitaciones" class="link_btn_rounded"  value="Inv. Pendientes" />
-             <input type="button" id="btnConversaciones" class="link_btn_rounded"  value="Conversaciones" />
+             <input type="button" id="btnConversaciones" class="link_btn_rounded"  value="Archivar Conver." />
               
              <input type="hidden" id="num_eq" name="num_eq_hid" value="" />
              </div>
@@ -62,7 +62,7 @@
    <br />
    <br />
    
-    <div id="MiCrearEquipo" style="display:none">
+     <div id="MiCrearEquipo" style="display:none">
         <div class="Contenido-CrearEquipo">
             <div class="CerrarCrearEquipo">
                 <a href="#" id="MiCerrarCreaEquipo">
@@ -161,7 +161,7 @@
        </div>
     </div>
 
- <div id="MiPopDele" style="display:none" >
+     <div id="MiPopDele" style="display:none" >
         <div class="Contenido-PopUpDele">
             <div class="CerrarPopUpDele">
                 <a href="#" id="MiCerrarDele">
@@ -191,7 +191,7 @@
         </div>
     </div>
 
-   <div id="MiPopEliminarUS" style="display:none" >
+     <div id="MiPopEliminarUS" style="display:none" >
         <div class="Contenido-PopUpEliminarUS">
             <div class="CerrarPopUpEliminarUS">
                 <a href="#" id="MiCerrarEliminarUS">
@@ -220,7 +220,7 @@
         </div>
     </div>
 
-<div id="MiPopUpPendientes" style="display:none" >
+    <div id="MiPopUpPendientes" style="display:none" >
         <div class="Contenido-PopUpPendientes">
             <div class="CerrarPopUpPendientes">
                 <a href="#" id="MiCerrarPendientes">
@@ -251,6 +251,50 @@
             </div>
         </div>
     </div>
+    
+        <div id="MiPopUpConversaciones" style="display:none" >
+        <div class="Contenido-PopUpConversaciones">
+            <div class="CerrarPopUpConversaciones">
+                <a href="#" id="MiCerrarConversaciones">
+                    <img src="images/close.png"/>
+                </a>
+            </div>
+            <div id="Conversaciones" >
+                <div style="width:850px">
+                    <table id="tbConversaciones" class="grid" width="100%" >
+                        <thead>
+                            <tr>
+                                <th >
+                                    Propósito:
+                                </th>
+                                <th>
+                                    Recurso
+                                </th>
+                                <th>
+                                    Equipo
+                                </th>
+                                <th>
+                                    por
+                                </th>
+                                <th>
+                                    Fecha
+                                </th>
+                                <th>
+                                    Comentarios...
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table> 
+                    <center>
+                    <input type="button" class="link_btn_rounded" id="btnArchivar" value="Archivar" />
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     
     
      </div>

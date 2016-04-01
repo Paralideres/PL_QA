@@ -302,4 +302,43 @@ Partial Public Class Equipos
         Return Resultado
     End Function
 
+    <WebMethod()> Public Shared Function ListarConversaciones() As List(Of InfoEquipoRecursoProposito)
+
+        Dim Resultado As New List(Of InfoEquipoRecursoProposito)
+        Dim oUsuario As New InfoUsuario()
+
+
+        oUsuario = HttpContext.Current.Session("UsuarioConectado")
+        If oUsuario Is Nothing Then
+            Resultado = Nothing
+        Else
+            '20_02_2016 
+            Resultado = Sistema.PL.Negocio.NegEquipo.Listar_Conversaciones(oUsuario.IdUsuario)
+
+        End If
+        Return Resultado
+    End Function
+
+    <WebMethod()> Public Shared Function ArchivarConversacion(ByVal Id_Equipo_Recurso As Integer) As String
+
+        Dim Resultado As String
+        Dim oUsuario As New InfoUsuario()
+
+        Try
+            oUsuario = HttpContext.Current.Session("UsuarioConectado")
+            If oUsuario Is Nothing Then
+                Resultado = Nothing
+            Else
+
+                Resultado = Sistema.PL.Negocio.NegEquipo.Archivar_Conversacion(oUsuario.IdUsuario, Id_Equipo_Recurso)
+            End If
+
+        Catch ex As Exception
+            Resultado = "ERROR " & ex.Message
+
+        End Try
+        Return Resultado
+    End Function
+
+
 End Class
